@@ -10,8 +10,15 @@ body {
   overflow-y: hidden;
 }
 
+.container {
+  max-width: 1318px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .search {
-  background: url(../src/images/Background.png) no-repeat center top / cover;
+  background: url(../src/assets/images/Background.png) no-repeat center top /
+    cover;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -55,7 +62,7 @@ body {
 }
 
 .search__intro input {
-  width: 504px;
+  width: 66%;
   height: 56px;
   background-color: #22222f;
   border: 0;
@@ -130,6 +137,7 @@ body {
   padding: 16px;
   background: #16161f;
   border-radius: 12px;
+  min-height: 616px;
 }
 
 .dash__left-values {
@@ -212,6 +220,7 @@ body {
   background: #16161f;
   border-radius: 12px;
   width: 630px;
+  min-height: 313px;
   max-height: 340px;
   padding-left: 24px;
   padding-right: 24px;
@@ -253,6 +262,33 @@ body {
   font-weight: 700;
 }
 
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: 100;
+  background: #16161f;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-svg {
+  width: 36px;
+  height: 36px;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 1s linear infinite;
+}
+
 @media (max-width: 1355px) {
   body {
     overflow-y: auto;
@@ -277,6 +313,7 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 560px;
+    width: 100%;
   }
   .dash__home {
     width: 100%;
@@ -307,14 +344,31 @@ body {
   .dash__right {
     max-width: 100%;
   }
-  .search__intro form {
-    max-width: 250px;
-    margin: 0 auto;
-  }
   .search__intro input {
     width: 100%;
   }
   .dash__left-temp-weather {
     bottom: 150px;
+  }
+  .search__intro h1 {
+    font-size: 24px;
+  }
+  .search__intro h3 {
+    font-size: 18px;
+  }
+  .dash__left {
+    padding: 8px;
+  }
+  .dash__left-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .dash__left-temp-values {
+    padding-bottom: 16px;
+    padding-left: 16px;
+  }
+  .dash__right {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
